@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #607EAA;
+    color: #F9F5EB;
+}
+
+.head_bar {
+    background-color: #1C3879;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search_section>form {
+    padding: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 0.5fr;
+    grid-gap: 10px;
+}
+
+.search_section>form>label {
+    display: flex;
+    align-items: center;
+}
+
+.search_section>form>input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.search_section>form>button {
+    background-color: cornflowerblue;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 50px 30px;
+    gap: 50px;
+}
+
+.input_section {
+    height: 500px;
+    width: 350px;
+    border: 1px solid black;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.input_section>h2 {
+    text-align: center;
+}
+
+.input_section>form {
+    margin: 5px;
+    padding: 10px;
+    display: block;
+}
+
+.input_section>form>.input {
+    margin: 10px 0;
+}
+
+.input_section>form>.input>input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.input_section>form>.input>label {
+    font-weight: bold;
+}
+
+.input_section>form>.input_inline {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.input_section>form>.input_inline>input {
+    cursor: pointer;
+}
+
+.input_section>form>button {
+    background-color: #1C3879;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.input_section>form>button>span {
+    font-weight: bold;
+}
+
+.book_shelf {
+    max-width: 800px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 800px;
+    width: 600px;
+}
+
+.items label {
+    order: 1;
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: #607EAA;
+    font-weight: bold;
+    transition: background ease 0.2s;
+    border-radius: 10px;
+    margin-bottom: -12px;
+    box-shadow: 2px 2px 2px 1px black;
+}
+
+.items .book_list {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #1C3879;
+    border-radius: 10px;
+    border-bottom: 2px solid black;
+}
+
+.book_list {
+    height: 465px;
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.items input[type="radio"] {
+    display: none;
+}
+
+.items input[type="radio"]:checked+label {
+    background: #1C3879;
+}
+
+.items input[type="radio"]:checked+label+.book_list {
+    display: block;
+}
+
+.book_item {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: #607EAA;
+}
+
+.book_item>h1 {
+    margin: 10px 0;
+}
+
+.action {
+    margin: 20px 0;
+}
+
+.green {
+    background-color: darkgreen;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellowgreen;
+}
+
+.green,
+.red,
+.yellow {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+.green:hover,
+.red:hover {
+    opacity: .5;
+}
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    position: relative;
+    background-color: #1C3879;
+    border-radius: 16px;
+}
+
+.modal-bg button.edit {
+    z-index: 999;
+    background-color: #607EAA
+}
+
+#close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: 900;
+    color: crimson;
+    cursor: pointer;
+}
+
+#close:hover {
+    opacity: .7;
+}
